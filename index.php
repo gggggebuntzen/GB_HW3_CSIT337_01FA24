@@ -1,8 +1,3 @@
-
-Here’s a corrected and error-free version of a basic index.php file that integrates with your project and avoids the "Unmatched '}'" error:
-
-php
-Copy code
 <?php
 // Include the database connection
 include 'database.php';
