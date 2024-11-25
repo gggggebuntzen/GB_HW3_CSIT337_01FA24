@@ -1,3 +1,4 @@
+<?php
 echo "<td>" . $row['MovieTitle'] . "</td>";
                     echo "<td>" . $row['ReleaseDate'] . "</td>";
                     echo "<td>" . $row['Genre'] . "</td>";
