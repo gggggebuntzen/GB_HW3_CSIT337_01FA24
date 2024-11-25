@@ -1,16 +1,10 @@
-<?php
-// Example PHP code: connecting to the database or performing operations
-include 'database.php'; // Database connection
-
-// You can also use PHP to handle form data or errors if necessary
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Database</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Linking CSS -->
 </head>
 <body>
     <h1>Movie Database</h1>
@@ -24,10 +18,13 @@ include 'database.php'; // Database connection
         <label for="movie">Favorite Movie:</label>
         <select id="movie" name="movie" required>
             <?php
-            // Fetch movie titles dynamically from the database
+            // Fetch movie titles from the database
+            include 'database.php';
             $result = $conn->query("SELECT MovieTitle FROM Movie");
-            while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['MovieTitle'] . "'>" . $row['MovieTitle'] . "</option>";
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='" . $row['MovieTitle'] . "'>" . $row['MovieTitle'] . "</option>";
+                }
             }
             ?>
         </select>
